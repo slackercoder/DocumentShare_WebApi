@@ -10,16 +10,16 @@ namespace DocumentShare.Controllers
 {
     public class DocumentController : ApiController
     {
-        public IEnumerable<Document> GetAllDocuments(int userId)
+        public List<Document> GetAllDocuments(int userId)
         {
             using (DocumentShareEntities db = new DocumentShareEntities())
             {
-                IEnumerable<Document> docs;
+                List<Document> docs;
 
-                docs = from doc in db.Documents
-                       join udc in db.UserDocuments on doc.DocumentId equals udc.DocumentId
-                       where udc.UserId == userId
-                       select doc;
+                docs = (from doc in db.Documents
+                        join udc in db.UserDocuments on doc.DocumentId equals udc.DocumentId
+                        where udc.UserId == userId
+                        select doc).ToList();
 
                 return docs;
             }
