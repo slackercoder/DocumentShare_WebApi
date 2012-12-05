@@ -10,19 +10,26 @@ namespace DocumentShare.Controllers
 {
     public class DocumentController : ApiController
     {
-        public IEnumerable<Document> GetAllDocuments()
+        public IEnumerable<Document> GetAllDocuments(int userId)
         {
-            using (DocumentShareEntities data = new DocumentShareEntities())
+            using (DocumentShareEntities db = new DocumentShareEntities())
             {
-                return data.Documents.ToList();
+                IEnumerable<Document> docs;
+
+                docs = from doc in db.Documents
+                       join udc in db.UserDocuments on doc.DocumentId equals udc.DocumentId
+                       where udc.UserId == userId
+                       select doc;
+
+                return docs;
             }
         }
 
-        public Document GetDocumentbyId(int id)
+        public Document GetDocumentbyId(int userId, int documentId)
         {
-            using (DocumentShareEntities data = new DocumentShareEntities())
+            using (DocumentShareEntities db = new DocumentShareEntities())
             {
-                return data.Documents.Where(o => o.DocumentId == id).FirstOrDefault();
+                return db.Documents.Where(o => o.DocumentId == documentId).FirstOrDefault();
             }
         }
     }

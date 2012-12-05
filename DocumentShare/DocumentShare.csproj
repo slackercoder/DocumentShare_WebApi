@@ -147,6 +147,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DocumentShareModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\User.cs">
+      <DependentUpon>DocumentShareModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserDocument.cs">
+      <DependentUpon>DocumentShareModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

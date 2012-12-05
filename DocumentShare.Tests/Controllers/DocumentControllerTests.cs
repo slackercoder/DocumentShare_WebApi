@@ -15,7 +15,7 @@ namespace DocumentShare.Tests.Controllers
         {
             DocumentShare.Controllers.DocumentController doc = new DocumentShare.Controllers.DocumentController();
 
-            List<Document> docs = (List<Document>)doc.GetAllDocuments();
+            List<Document> docs = (List<Document>)doc.GetAllDocuments(1);
 
             Assert.IsTrue(docs.Count() > 0);
         }
@@ -25,7 +25,7 @@ namespace DocumentShare.Tests.Controllers
         {
             DocumentShare.Controllers.DocumentController doc = new DocumentShare.Controllers.DocumentController();
 
-            Document thisDoc = doc.GetDocumentbyId(1);
+            Document thisDoc = doc.GetDocumentbyId(1,1);
 
             Assert.IsTrue(doc != null);
         }
