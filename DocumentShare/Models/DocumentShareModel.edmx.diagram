@@ -8,6 +8,7 @@
         <EntityTypeShape EntityType="DocumentShareModel.Document" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DocumentShareModel.User" Width="1.5" PointX="2.75" PointY="0.5" />
         <EntityTypeShape EntityType="DocumentShareModel.UserDocument" Width="1.5" PointX="5" PointY="0.625" />
+        <EntityTypeShape EntityType="DocumentShareModel.ErrorLog" Width="1.5" PointX="6.75" PointY="0.5" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

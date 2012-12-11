@@ -7,24 +7,27 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using DocumentShare.Models;
-using System;
-using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
-
-public partial class DocumentShareEntities : DbContext
+namespace DocumentShare.Models
 {
-    public DocumentShareEntities()
-        : base("name=DocumentShareEntities")
+    using System;
+    using System.Data.Entity;
+    using System.Data.Entity.Infrastructure;
+    
+    public partial class DocumentShareEntities : DbContext
     {
+        public DocumentShareEntities()
+            : base("name=DocumentShareEntities")
+        {
+        }
+    
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            throw new UnintentionalCodeFirstException();
+        }
+    
+        public DbSet<Document> Documents { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<UserDocument> UserDocuments { get; set; }
+        public DbSet<ErrorLog> ErrorLogs { get; set; }
     }
-
-    protected override void OnModelCreating(DbModelBuilder modelBuilder)
-    {
-        throw new UnintentionalCodeFirstException();
-    }
-
-    public DbSet<Document> Documents { get; set; }
-    public DbSet<User> Users { get; set; }
-    public DbSet<UserDocument> UserDocuments { get; set; }
 }

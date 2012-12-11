@@ -39,7 +39,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Common.Logging">
+      <HintPath>..\..\spring-net-social-dropbox-master\build\VS2010-NET40\Spring.Social.Dropbox\Debug\Common.Logging.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Spring.Rest">
+      <HintPath>..\..\spring-net-social-dropbox-master\build\VS2010-NET40\Spring.Social.Dropbox\Debug\Spring.Rest.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Social.Core">
+      <HintPath>..\..\spring-net-social-dropbox-master\build\VS2010-NET40\Spring.Social.Dropbox\Debug\Spring.Social.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Social.Dropbox">
+      <HintPath>..\..\spring-net-social-dropbox-master\build\VS2010-NET40\Spring.Social.Dropbox\Debug\Spring.Social.Dropbox.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
@@ -244,7 +256,9 @@
     <Content Include="Scripts\knockout-2.1.0.debug.js" />
     <Content Include="Scripts\knockout-2.1.0.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
